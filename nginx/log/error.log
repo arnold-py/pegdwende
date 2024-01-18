@@ -1,0 +1,9 @@
+2024/01/03 11:22:58 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:22:59 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:23:00 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:23:01 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:23:03 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:23:05 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:23:09 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:23:16 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
+2024/01/03 11:23:30 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:68
