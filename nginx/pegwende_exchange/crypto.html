@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEGDWENDE ECHANGE</title>
     <!-- ======= Styles ====== -->
+    <script src="js/apis/admins/crypto.js"></script>
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
@@ -109,7 +111,7 @@
                       <div class='col-md-6'>
                         <div class='search-box'>
                           <form class='search-form'>
-                            <input class='form-control' placeholder='Rechercher un utilisateur' type='text'>
+                            <input class='form-control' placeholder='Rechercher une crypto par son nom ou sa binance' type='text'>
                             <button class='btn btn-link search-btn'>
                               <i class='glyphicon glyphicon-search'></i>
                             </button>
@@ -119,44 +121,6 @@
                     </div>
                   </div>
                   
-                
-                
-<div class="p-2">
-    <div class="card">
-        <div class="card-header">
-            <div class="container ">
-                <div class="row">
-                <div class="col">
-                    <h5>Liste des utilisateurs</h4>
-                </div>
-                <div class="col">
-                </div>
-                <div class="col text-center">
-                    <!-- <button class="btn btn-primary btn-sm">Ajouter une Crypto</button> -->
-                </div>
-                </div>
-            </div>
-        </div>
-    <div class="card-body text-center">
-        <div class="card w-100">
-            <table class="table table-bordered table-striped data-table1" >
-                <thead>
-                    <tr>
-                    <th>Nom et Prénom</th>
-                    <th>Email</th>
-                    <th>Type</th>
-                    <th>Téléphone</th>
-                    <th>Verification</th>
-                    <th>Option</th>
-                    </tr>
-                </thead>
-                <tbody id="table">
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-</div>
 
 
 <div class="p-2">
@@ -186,13 +150,15 @@
                     <th>Option</th>
                     </tr>
                 </thead>
-                <tbody id="crypto">
+                <tbody id="cryptoTable">
+                   
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 </div>
+
               <!-- </div> -->
          <!--Test ADD CRYPTO -->
          <div class="card mb-3" style="max-width: 100%;">
@@ -249,12 +215,10 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script src="js/apis/admins/adminRequest.js"></script>
-    <script src="js/apis/admins/users.js"></script>
 
 
 
-
+<!-- 
     <script>
 DashboardPrimitiveData()
         // setadmin().then(function (data) {
@@ -293,7 +257,7 @@ DashboardPrimitiveData()
             });
     }
 
-    </script>
+    </script> -->
 
 <script>
         function submitForm() {
