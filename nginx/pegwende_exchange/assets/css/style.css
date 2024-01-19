@@ -436,14 +436,14 @@ body {
     box-sizing: border-box;
   }
 
-  .Profile button {
+  /* .Profile button {
     padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+  } */
 /* ================== Message ============== */
 body {
   background: #ffffff;
