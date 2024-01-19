@@ -62,7 +62,7 @@ const verification = async (email = null, password = null) => {
         throw new Error(e.message);
     }
 }
-// verification('client@gmail.com', 'CLIENT');
+verification('client@gmail.com', 'CLIENT');
 
 // // Utilisation de la fonction
 // verification('client@gmail.com', 'CLIENT');

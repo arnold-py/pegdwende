@@ -12,107 +12,30 @@
 </head>
 
 <body>
-    <!-- =============== Navigation ================ -->
-    <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a>
-                        <span class="welcome">Bienvenue, </span>
-                    </a>
-                </li>
+    
+    
+    
+            <div class="menuContent"></div>
+            <!-- ========================= Main ==================== -->
 
-                <li>
-                    <a href="dashboard.html">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="profile1.html">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title"> Profile</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="transaction.html">
-                        <span class="icon">
-                            <ion-icon name="repeat-outline"></ion-icon>
-                        </span>
-                        <span class="title">Transaction</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="Message.html">
-                        <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                        </span>
-                        <span class="title">Message</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="Vérification.html">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Vérification</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="Password.html">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Mot de passe</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="deconnexion.html">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="title">Déconnecter</span>
-                    </a>
-                </li>
-        </div>
-
-         <!-- ========================= Main ==================== -->
-         <div class="main">
-            <div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-                <div class="user">
-                    <img src="assets/imgs/customer01.jpg" alt="">
-                </div>
-            </div>
 
             <!-- ======================= Cards ================== -->
-            <div class="cardBox">
+            <div class="cardBox container">
                 <div class="card">
                     <div>
-                        <div class="numbers">1,504</div>
-                        <div class="cardName">Nombre de transaction</div>
+                        <div class="numbers" id="nbr_transaction"></div>
+                        <div class="cardName">Nombre de transactions</div>
                     </div>
 
                     <div class="iconBx">
                         <ion-icon name="eye-outline"></ion-icon>
                     </div>
                 </div>
-
+        
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
+                        <div class="numbers" id="nbr_investment"></div>
                         <div class="cardName">Total Investis</div>
                     </div>
 
@@ -123,19 +46,8 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">284</div>
-                        <div class="cardName">Commentaire</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">$7,842</div>
-                        <div class="cardName">Montant du portfeuille</div>
+                        <div class="numbers" id="nbr_wallet">&nbsp;</div>
+                        <div class="cardName">Solde</div>
                     </div>
 
                     <div class="iconBx">
@@ -145,14 +57,21 @@
             </div>
 
     <!-- =========== Scripts =========  -->
-    <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
     <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/recup.js"></script>
+    <!-- <script src="assets/js/recup.js"></script> -->
+    <script src="js/requests.js"></script>
 
 
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- <script src="12js/apis/admins/adminRequest.js"></script> -->
+    <script>dashboardPrimitiveData()</script>
+
+
 </body>
 
 </html>
