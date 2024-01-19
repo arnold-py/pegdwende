@@ -178,7 +178,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Ajout d'une cryptomonaie</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" onclick="resetForm()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <!-- <form class="form"> -->
             <div class="modal-body">
@@ -186,19 +186,23 @@
                     <form id="myForm" method="post">
                         <div class="text-center" >
                             <label for="nom">Nom</label>
-                            <input type="text" id="nom" name="nom" placeholder="Taper le nom de la crypto" required>
+                            <input type="text" id="nom" name="nom" placeholder="Taper le nom de la crypto">
+                            <!-- <span id="error" class="text-md-start" ></span> -->
                         </div>
                         <div class="text-center" >
                             <label for="prenom">Binance coin</label>
                             <input type="text" id="binance_coin" name="binance_coin" placeholder="Taper la binance coin de la crypto" required>
+                            <!-- <span id="error" class="text-md-start" ></span> -->
                         </div>
                         <div class="text-center" >
                             <label for="code-postal">Quantité</label>
                             <input type="number" id="quantite" name="quantite" placeholder="Taper la quantité de la crypto" required>
+                            <!-- <span id="error" class="text-md-start" ></span> -->
                         </div>
                         <div class="text-center" >
                             <label for="date-naissance">Prix unitaire</label>
                             <input type="number" id="prix_unite" name="prix_unite" placeholder="Taper le prix unitaire de la crypto" required>
+                            <!-- <span id="error" class="text-md-start" ></span> -->
                         </div>
                         <!-- <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
@@ -206,8 +210,57 @@
                     </form>
                     <div class="modal-footer">
                         <p>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Annuler</button>
-                            <button type="button" class="btn btn-outline-success btn-sm">Creer</button>
+                            <button type="button" onclick="resetForm()" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Annuler</button>
+                            <button type="submit" onclick="addCrypto()" class="btn btn-outline-success btn-sm">Creer</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade modal-lg" id="updateCrypto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modification d'une cryptomonaie</h5>
+          <button type="button" onclick="resetForm()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- <form class="form"> -->
+            <div class="modal-body">
+                <div class="Profile">
+                    <form id="myForm" method="post">
+                        <div class="text-center" >
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Taper le nom de la crypto">
+                            <!-- <span id="error" class="text-md-start" ></span> -->
+                        </div>
+                        <div class="text-center" >
+                            <label for="prenom">Binance coin</label>
+                            <input type="text" id="binance_coin" name="binance_coin" placeholder="Taper la binance coin de la crypto" required>
+                            <!-- <span id="error" class="text-md-start" ></span> -->
+                        </div>
+                        <div class="text-center" >
+                            <label for="code-postal">Quantité</label>
+                            <input type="number" id="quantite" name="quantite" placeholder="Taper la quantité de la crypto" required>
+                            <!-- <span id="error" class="text-md-start" ></span> -->
+                        </div>
+                        <div class="text-center" >
+                            <label for="date-naissance">Prix unitaire</label>
+                            <input type="number" id="prix_unite" name="prix_unite" placeholder="Taper le prix unitaire de la crypto" required>
+                            <!-- <span id="error" class="text-md-start" ></span> -->
+                        </div>
+                        <!-- <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div> -->
+                    </form>
+                    <div class="modal-footer">
+                        <p>
+                            <button type="button" onclick="resetForm()" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Annuler</button>
+                            <button type="submit" onclick="" class="btn btn-outline-success btn-sm">Modifier</button>
                         </p>
                     </div>
                 </div>
@@ -221,6 +274,10 @@
 
 
     <!-- =========== Scripts =========  -->
+
+    <script>
+        
+    </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
