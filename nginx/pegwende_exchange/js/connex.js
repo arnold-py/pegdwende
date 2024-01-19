@@ -32,9 +32,7 @@ function login() {
             localStorage.setItem("jwt", jwt_token);
 
             // Redirection vers le tableau de bord approprié
-            if (userType == 'ADMIN') {
-                window.location.href = 'adashboard.html';
-            } else if (userType == 'CLIENT') {
+            if (userType == 'ADMIN' || userType == 'CLIENT') {
                 window.location.href = 'dashboard.html';
             } else {
                 throw new Error('Type d\'utilisateur non reconnu');

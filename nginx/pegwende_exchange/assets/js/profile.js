@@ -13,7 +13,7 @@ function fetchUserInfo() {
           'Authorization': `Bearer ${jwtToken}`
         }
       })
-        .then(response => { 
+        .then(response => {
           if (!response.ok) {
             throw new Error('Erreur réseau');
           }
@@ -22,25 +22,23 @@ function fetchUserInfo() {
         .then(data => {
           // Vérifiez si la réponse et les informations de l'utilisateur existent
           if (data && data.message) {
-
-            console.log(data.message);
-            // const userInfoDiv = document.getElementById('userInfo');
+            const userInfoDiv = document.getElementById('userInfo');
   
-            // // Construisez le contenu HTML avec les informations de l'utilisateur
-            // userInfoDiv.innerHTML = `
-            //   <p>ID: ${data.message.id}</p>
-            //   <p>Nom: ${data.message.nom}</p>
-            //   <p>Prénoms: ${data.message.prenoms}</p>
-            //   <p>Email: ${data.message.email}</p>
-            //   <p>Numéro: ${data.message.numero}</p>
-            //   <p>Sexe: ${data.message.sexe}</p>
-            //   <p>Type: ${data.message.type}</p>
-            //   <p>Solde: ${data.message.solde}</p>
-            //   <p>Pièce Identité Recto: ${data.message.piece_identite_recto}</p>
-            //   <p>Pièce Identité Verso: ${data.message.piece_identite_verso}</p>
-            //   <p>Vérifié: ${data.message.is_verified}</p>
-            //   <p>Supprimé: ${data.message.is_deleted}</p>
-            // `;
+            // Construisez le contenu HTML avec les informations de l'utilisateur
+            userInfoDiv.innerHTML = `
+              <p>ID: ${data.message.id}</p>
+              <p>Nom: ${data.message.nom}</p>
+              <p>Prénoms: ${data.message.prenoms}</p>
+              <p>Email: ${data.message.email}</p>
+              <p>Numéro: ${data.message.numero}</p>
+              <p>Sexe: ${data.message.sexe}</p>
+              <p>Type: ${data.message.type}</p>
+              <p>Solde: ${data.message.solde}</p>
+              <p>Pièce Identité Recto: ${data.message.piece_identite_recto}</p>
+              <p>Pièce Identité Verso: ${data.message.piece_identite_verso}</p>
+              <p>Vérifié: ${data.message.is_verified}</p>
+              <p>Supprimé: ${data.message.is_deleted}</p>
+            `;
           } else {
             console.error('Données invalides ou manquantes dans la réponse.');
           }
