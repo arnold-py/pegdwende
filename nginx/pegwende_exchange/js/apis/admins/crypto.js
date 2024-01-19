@@ -38,8 +38,8 @@ window.addEventListener('load', function() {
                     <td id="cryptUnitaire">${crypt.prix_unite}</td>
                     <td id="cryptBinance">${crypt.binance_coin}</td>
                     <td id="">
-                        <button class="btn btn-outline-warning btn-sm" type="button">
-                        <i class="bi bi-arrow-left-right"></i>
+                        <button class="btn btn-outline-primary btn-sm" type="button">
+                        <i class="bi bi-pen"></i>
                         </button>
                         <button class="btn btn-outline-danger btn-sm" type="button">
                         <i class="bi bi-trash3"></i>

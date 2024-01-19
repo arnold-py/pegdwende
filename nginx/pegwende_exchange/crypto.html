@@ -129,11 +129,12 @@
             <div class="container ">
                 <div class="row">
                 <div class="col">
-                    <h5>Liste des cryptomonnaies</h4>
+                    <h5>Liste de cryptomonnaie</h4>
                 </div>
                 <div class="col">
                 </div>
-                <div class="col text-center">
+                <div class="col text-center position-relative">
+                    <button type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary btn-sm position-absolute top-0 end-0">Ajouter une Crypto</button>
                 </div>
                 </div>
             </div>
@@ -144,9 +145,9 @@
                 <thead>
                     <tr>
                     <th>Nom</th>
-                    <th>quantite</th>
-                    <th>prix unit.</th>
-                    <th>binance</th>
+                    <th>Quantite</th>
+                    <th>Prix unit.</th>
+                    <th>Binance</th>
                     <th>Option</th>
                     </tr>
                 </thead>
@@ -161,40 +162,60 @@
 
               <!-- </div> -->
          <!--Test ADD CRYPTO -->
-         <div class="card mb-3" style="max-width: 100%;">
-            <div class="card-header text-center">
-                <h5 class="card-title">Ajouter des CRYPTO</h5>
-            </div>
-            <div class="card-body">
-                <!-- Formulaire -->
-                <form id="myForm">
-                    <div class="form-group">
-                        <label for="nom">Nom</label>
-                        <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
-                    </div>
-                    <div class="form-group">
-                        <label for="quantite">Quantité</label>
-                        <input type="number" class="form-control" id="quantite" placeholder="Entrez la quantité">
-                    </div>
-                    <div class="form-group">
-                        <label for="prix_unite">Prix Unitaire</label>
-                        <input type="number" class="form-control" id="prix_unite" placeholder="Entrez le prix unitaire">
-                    </div>
-                    <div class="form-group">
-                        <label for="binance_coin">Binance Coin</label>
-                        <input type="text" class="form-control" id="binance_coin" placeholder="Entrez le Binance Coin">
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Envoyer</button>
-                </form>
-
-                <!-- Affichage de la réponse de l'API -->
-                <div id="apiResponse" class="mt-4"></div>
-            </div>
-        </div>
+         
 
         <!-- <button onclick="getAllUsers()" > clickhgkhk</button> -->
 
         <!-- Button trigger modal -->
+
+
+        <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade modal-lg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Ajout d'une cryptomonaie</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- <form class="form"> -->
+            <div class="modal-body">
+                <div class="Profile">
+                    <form id="myForm" method="post">
+                        <div class="text-center" >
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Taper le nom de la crypto" required>
+                        </div>
+                        <div class="text-center" >
+                            <label for="prenom">Binance coin</label>
+                            <input type="text" id="binance_coin" name="binance_coin" placeholder="Taper la binance coin de la crypto" required>
+                        </div>
+                        <div class="text-center" >
+                            <label for="code-postal">Quantité</label>
+                            <input type="number" id="quantite" name="quantite" placeholder="Taper la quantité de la crypto" required>
+                        </div>
+                        <div class="text-center" >
+                            <label for="date-naissance">Prix unitaire</label>
+                            <input type="number" id="prix_unite" name="prix_unite" placeholder="Taper le prix unitaire de la crypto" required>
+                        </div>
+                        <!-- <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div> -->
+                    </form>
+                    <div class="modal-footer">
+                        <p>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-outline-success btn-sm">Creer</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
 
   
 
