@@ -1,4 +1,5 @@
 const baseUrl = `http://www.pegwendeechange.com:3000`
+const jwtToken = localStorage.getItem("jwt");
 
 const makeRequest = async (method, body, endpoint, headers = {}) => {
     try {
@@ -81,7 +82,8 @@ const createUser = async (userData) => {
 
 
 function getAllTransaction(type = null) {
-    var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
+    var accessToken = jwtToken;
+    // var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
     var url = `${baseUrl}/api/v1/transaction/?page=0&nb_per_page=50&order_descanding=true&type_montant=EQUAL`
     if(type) url = `${url}&type_transaction=${type}`
     return new Promise(function (resolve, reject) {
@@ -103,7 +105,8 @@ function getAllTransaction(type = null) {
 }
 
 function setadmin() {
-    var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
+    var accessToken = jwtToken;
+    // var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
     var url = `${baseUrl}/api/v1/users/setadmin/1`
     return new Promise(function (resolve, reject) {
         $.ajax({
@@ -124,7 +127,8 @@ function setadmin() {
 }
 
 function updateUser(data) {
-    var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
+    var accessToken = jwtToken;
+    // var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
     var url = `${baseUrl}/api/v1/users/1`
     return new Promise(function (resolve, reject) {
         $.ajax({
@@ -146,7 +150,8 @@ function updateUser(data) {
 }
 
 function change_passord(data) {
-    var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
+    var accessToken = jwtToken;
+    // var accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI1MjE5fQ.UpW8zWM1zmpcJXC_lH6_AXms8W19R0lhh7HIHZhH9L0`;
     var url = `${baseUrl}/api/v1/user/change_passord`
     return new Promise(function (resolve, reject) {
         $.ajax({
@@ -167,11 +172,61 @@ function change_passord(data) {
     });
 }
 
+function getType() {
+    // Vérification si le jeton existe
+    if (jwtToken) {
+        // Utilisez le jeton dans votre requête fetch
+        fetch('http://www.pegwendeechange.com:3000/api/v1/user/', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${jwtToken}`
+          }
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Erreur réseau');
+            }
+            // return response.json();
+          })
+          .then(data => {
+            // Vérifiez si la réponse et les informations de l'utilisateur existent
+            if (data && data.message) {    
+              // Construisez le contenu HTML avec les informations de l'utilisateur
+              const userType = data.message.type;
+              return userType;
+            } else {
+              console.error('Donnée invalide ou manquante dans la réponse.');
+            }
+          })
+          .catch(error => {
+            console.error('Erreur lors de la récupération des données depuis l\'API:', error);
+          });
+      } else {
+        console.error('Aucun jeton trouvé dans le stockage local.');
+      }
+}
+
+function addMenu(){
+    const  menuTargetPlace = document.getElementById("menuContent");
+    fetch('../../panel.html')
+    .then(res => {
+        if (res.ok){
+            return res.text();
+        }
+    })
+    .then(newContent => {
+        menuTargetPlace.innerHTM = newContent;
+    });
+}
+
+function panels() {
+    let verification = document.getElementById("")
+}
 // function makeInvestement() {
 //     var accessToken =`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3N0YXR1cyI6IkFETUlOIiwiZXhwIjoxNzA1MzI5MTEwfQ.zSppONqL0ChoTfgKPY9_4CUNEfr4_r4VtXTEjBTUjgg`;
 //     const baseUrl = `http://www.pegwendeechange.com:3000`;
 // }
 
 
-
-
+window.onload = addMenu();

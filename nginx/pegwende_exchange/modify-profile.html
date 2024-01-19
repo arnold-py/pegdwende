@@ -17,10 +17,10 @@
 </head>
 
 <body>
+
     <div class="menuContent"></div>
-
-
-<!-- Profile -->
+    
+    <!-- Profile -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -28,7 +28,7 @@
                 <div class="card-header text-center">Profile</div>
                 <div class="card-body">
                     <div class="Profile">
-                        <form id="myForm" method="post">
+                        <form action="/page-traitement-donnees" method="post">
                             <div>
                                 <label for="nom">Nom</label>
                                 <input type="text" id="nom" name="nom" placeholder="Martin" required>
@@ -73,78 +73,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></script>
 <script src="assets/js/bootstrap.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/apis/admins/adminRequest.js">
-    </script>
-    <script>
-
-        document.getElementById('myForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            updateProfile()
-        });
-
-        //wallet balance
-        setadmin().then(function (data) {
-            console.log(data); 
-            populateInput(data.message)
-        }).catch(function (error) {
-            $("#nbr_wallet").html('---');
-            console.error(error); 
-        });
-
-        jQuery(document).ready(function(){
-        });
-    
-        function populateInput(data) {
-            var inputValue = data.nom;
-            var inputElement = document.getElementById("nom");
-            inputElement.value = inputValue;
-
-            inputValue = data.prenoms;
-            inputElement = document.getElementById("prenom");
-            inputElement.value = inputValue;
-
-            inputValue = data.pays;
-            inputElement = document.getElementById("pays");
-            inputElement.value = inputValue;
-
-            inputValue = data.ville;
-            inputElement = document.getElementById("ville");
-            inputElement.value = inputValue;
-
-            inputValue = data.date_naissance;
-            inputElement = document.getElementById("date-naissance");
-            inputElement.value = inputValue;
-
-            inputValue = data.numero;
-            inputElement = document.getElementById("telephone");
-            inputElement.value = inputValue;
-        }
-    
-        function updateProfile(){
-            nom = document.getElementById("nom").value;
-            prenom = document.getElementById("prenom").value;
-            pays = document.getElementById("pays").value;
-            ville = document.getElementById("ville").value;
-            naissance = document.getElementById("date-naissance").value;
-            telephone = document.getElementById("telephone").value;
-            data =  {
-                "nom": nom,
-                "prenoms": prenom,
-                "numero": telephone,
-                'ville': ville,
-                "pays": pays,
-                "date_naissance" : naissance
-            }
-            updateUser(data).then(function (res) {
-                console.log(res); 
-            }).catch(function (error) {
-                console.error(error); 
-            });
-        }
-        
-    </script>
+<script src="js/requests.js"></script>
 </body>
 
 </html>
